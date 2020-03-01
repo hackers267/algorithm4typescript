@@ -1,18 +1,13 @@
 import Node from "./node";
 
 export default class Stack {
-  private first: Node | null;
+  private first: Node | null = null;
 
-  private n: number;
-
-  constructor() {
-    this.first = null;
-    this.n = 0;
-  }
-
-  size() {
+  public get size() {
     return this.n;
   }
+
+  private n: number = 0;
 
   push(item: any) {
     const oldFirst = this.first;
@@ -30,5 +25,9 @@ export default class Stack {
       return item;
     }
     return null;
+  }
+
+  isEmpty() {
+    return this.first === null;
   }
 }
