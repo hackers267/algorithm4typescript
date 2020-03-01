@@ -31,7 +31,6 @@ export default class Stack {
     return this.first === null;
   }
 
-  // @ts-ignore
   [Symbol.iterator]() {
     return this;
   }

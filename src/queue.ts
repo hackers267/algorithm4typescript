@@ -44,7 +44,6 @@ export default class Queue<T> {
     return this.first === null;
   }
 
-  // @ts-ignore
   [Symbol.iterator]() {
     return this;
   }
