@@ -30,4 +30,24 @@ export default class Stack {
   isEmpty() {
     return this.first === null;
   }
+
+  // @ts-ignore
+  [Symbol.iterator]() {
+    return this;
+  }
+
+  next() {
+    if (this.first === null) {
+      return {
+        value: null,
+        done: true
+      };
+    }
+    const { item } = this.first;
+    this.first = this.first.next;
+    return {
+      value: item,
+      done: false
+    };
+  }
 }
