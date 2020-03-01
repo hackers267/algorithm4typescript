@@ -1,5 +1,10 @@
 import Node from "./node";
 
+/**
+ * @author silence_zhpf
+ * @desc 基础的数据结构：队列
+ * @version 0.1.0
+ */
 export default class Queue<T> {
   private n: number = 0;
 
@@ -7,10 +12,20 @@ export default class Queue<T> {
 
   private last: Node | null = null;
 
+  /**
+   * @author silence_zhpf
+   * @desc 获取队列的大小
+   * @returns {number}  队列的大小值
+   */
   get size() {
     return this.n;
   }
 
+  /**
+   * @author silence_zhpf
+   * @desc 入列操作
+   * @param {T} item 入列元素值
+   */
   enqueue(item: T) {
     if (this.first === null) {
       const node = new Node(item);
@@ -31,6 +46,12 @@ export default class Queue<T> {
     }
   }
 
+  /**
+   * @author silence_zhpf
+   * @desc 出列操作
+   * @returns {any} 返回队列中最早添加的元素
+   * @throws 当队列为空，仍然执行出列操作，抛出异常。
+   */
   dequeue() {
     if (this.first !== null) {
       const { item } = this.first;
@@ -40,15 +61,20 @@ export default class Queue<T> {
     throw new RangeError("The queue is Empty");
   }
 
+  /**
+   * @author silence_zhpf
+   * @desc 队列是否为空
+   * @returns {boolean} 队列是否为空
+   */
   isEmpty() {
     return this.first === null;
   }
 
-  [Symbol.iterator]() {
+  private [Symbol.iterator]() {
     return this;
   }
 
-  next() {
+  private next() {
     if (this.first === null) {
       return {
         done: true,
