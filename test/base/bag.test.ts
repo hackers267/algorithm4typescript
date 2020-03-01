@@ -1,4 +1,4 @@
-import Bag from "../src/bag";
+import Bag from "@src/base/bag";
 
 describe("bag", () => {
   test("bag size", () => {

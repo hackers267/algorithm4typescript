@@ -1,4 +1,4 @@
-import Stack from "../src/stack";
+import Stack from "@src/base/stack";
 
 describe("The Stack", () => {
   test("stack push", () => {

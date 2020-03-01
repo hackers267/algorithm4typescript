@@ -25,6 +25,9 @@ module.exports = {
         map: [["@src", "./src"]],
         extensions: [".ts"]
       }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
     }
   }
 };

@@ -1,4 +1,4 @@
-import Queue from "../src/queue";
+import Queue from "@src/base/queue";
 
 describe("queue", () => {
   test("queue enqueue and dequeue", () => {
