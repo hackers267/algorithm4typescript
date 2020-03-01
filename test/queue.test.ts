@@ -22,4 +22,13 @@ describe("queue", () => {
     queue.enqueue(2);
     expect(queue.isEmpty()).toBeFalsy();
   });
+  test("queue iterator", () => {
+    const queue = new Queue();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    const array = [...queue];
+    expect(array.join(",")).toEqual("1,2,3,4");
+  });
 });
