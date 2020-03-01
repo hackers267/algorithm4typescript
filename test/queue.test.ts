@@ -29,6 +29,9 @@ describe("queue", () => {
     queue.enqueue(3);
     queue.enqueue(4);
     const array = [...queue];
-    expect(array.join(",")).toEqual("1,2,3,4");
+    const target = [1, 2, 3, 4];
+    array.forEach((value, index) => {
+      expect(value).toEqual(target[index]);
+    });
   });
 });
