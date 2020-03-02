@@ -24,7 +24,7 @@ export default class Stack {
    * @desc 入栈操作
    * @param item 入栈的元素值
    */
-  push(item: any) {
+  public push(item: any) {
     const oldFirst = this.first;
     const first = new Node(item);
     first.next = oldFirst;
@@ -38,7 +38,7 @@ export default class Stack {
    * @returns {any} 返回出栈元素
    * @throws 当栈为空时，执行出栈操作，抛出异常
    */
-  pop() {
+  public pop() {
     if (this.first !== null) {
       const { item } = this.first;
       this.first = this.first.next;
@@ -49,11 +49,24 @@ export default class Stack {
   }
 
   /**
+   * @author silence_zpf
+   * @desc 从栈中取最近入栈的值，但不删除值。
+   * @returns {any}
+   */
+  public peek() {
+    if (this.first) {
+      const { item } = this.first;
+      return item;
+    }
+    throw new RangeError("This stack is empty");
+  }
+
+  /**
    * @author silence_zhpf
    * @desc 判断栈是否为空
    * @returns {boolean} 返回栈是否为空
    */
-  isEmpty() {
+  public isEmpty() {
     return this.first === null;
   }
 

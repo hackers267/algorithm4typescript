@@ -13,6 +13,15 @@ describe("The Stack", () => {
     stack.push(5);
     const item = stack.pop();
     expect(item).toEqual(5);
+    expect(stack.size).toEqual(1);
+  });
+  test("stack peek", () => {
+    const stack = new Stack();
+    stack.push(5);
+    stack.push(3);
+    const item = stack.peek();
+    expect(item).toEqual(3);
+    expect(stack.size).toEqual(2);
   });
   test("stack isEmpty", () => {
     const stack = new Stack();
